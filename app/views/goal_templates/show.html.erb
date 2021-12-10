@@ -1,0 +1,45 @@
+<h1> Goal Details </h1>
+
+
+<table border="1">
+  <tr>
+    <td>
+      Goal
+    </td>
+    <td>
+      <%= @the_goal.description %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Times to Complete
+    </td>
+    <td>
+      <%= @the_goal.target_number %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Times Already Completed
+    </td>
+    <td>
+      <%= @the_goal.completed %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Due Date
+    </td>
+    <td>
+      <%= @the_goal.due_date %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Public?
+    </td>
+    <td>
+      <%= @the_goal.public %>
+    </td>
+  </tr>
+</table>

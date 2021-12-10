@@ -1,1 +1,103 @@
-hi
+<h1>
+  My Goals
+</h1>
+<hr>
+<table border="1">
+  <tr>
+    <th>
+      Goal
+    </th>
+    <th>
+      Times
+    </th>
+    <th>
+    </th>
+    <th>
+      Due Date
+    </th>
+    <th>
+      Status
+    </th>
+    <th>
+      Public?
+    </th>
+    <th>
+    </th>
+  </tr>
+  <% @list_of_user_goals.each do |a_goal| %>
+  <tr>
+    <td>
+      <%= a_goal.description %>
+    </td>
+    <td>
+      <%= a_goal.target_number %>
+    </td>
+    <td>
+      Button
+    </td>
+    <td>
+      <%= a_goal.due_date %>
+    </td>
+    <td>
+      Status
+    </td>
+    <td>
+      <%= a_goal.public %>
+    </td>
+    <td>
+      <a href="/goals/<%= a_goal.id %>">
+        Go to Goal
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<h1>
+  Public Goals
+</h1>
+<table border="1">
+  <tr>
+    <th>
+      Go-Getter
+    </th>
+    <th>
+      Goal
+    </th>
+    <th>
+      Times
+    </th>
+    <th>
+      Due Date
+    </th>
+    <th>
+      Status
+    </th>
+    <th>
+    </th>
+  </tr>
+  <% @nonuser_goals.each do |a_goal| %>
+  <tr>
+    <td>
+      <%= a_goal.owner %>
+    </td>
+    <td>
+      <%= a_goal.description %>
+    </td>
+    <td>
+      <%= a_goal.target_number %>
+    </td>
+    <td>
+      <%= a_goal.due_date %>
+    </td>
+    <td>
+      Status
+    </td>
+    <td>
+      <a href="/goals/<%= a_goal.id %>">
+        Encourage Them!
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
