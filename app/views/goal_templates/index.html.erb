@@ -4,11 +4,11 @@
 
 <% if session.fetch(:user_id) != nil %>
 
-<h1>
+<h3>
   Make today great, <%= @user.name %>!
-</h1>
+</h3>
 <br>
-<table border="1">
+<table border=1 class="table table-striped" >
   <tr>
     <th>
       Goal
@@ -17,6 +17,7 @@
       Times
     </th>
     <th>
+      Record your progress
     </th>
     <th>
       Due Date
@@ -43,7 +44,7 @@
       <form action="/goals/record_goal">
         <label for="browser_record_goal"></label>
         <input id="browser_record_goal" type="hidden" name="input_record_goal" value=<%= a_goal.id%>>
-        <button>Did it!</button>
+        <button class="btn btn-success">Did it!</button>
       </form>
     <% end %>
     </td>
@@ -82,11 +83,11 @@
 
 <a href="/goals/new_goal">Create a new goal!</a>
 <% end %>
-
-<h1>
+<br><br><br>
+<h3>
   Public Goals
-</h1>
-<table border="1">
+</h3>
+<table border=1 class="table table-striped" >
   <tr>
     <th>
       Go-Getter
