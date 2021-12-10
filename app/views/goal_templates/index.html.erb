@@ -1,7 +1,9 @@
+
+<% if session.fetch(:user_id) != nil %>
 <h1>
   My Goals
 </h1>
-<hr>
+
 <table border="1">
   <tr>
     <th>
@@ -52,6 +54,10 @@
   </tr>
   <% end %>
 </table>
+<br>
+
+<a href="/goals/new_goal">Create a new goal!</a>
+<% end %>
 
 <h1>
   Public Goals

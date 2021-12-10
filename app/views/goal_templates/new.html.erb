@@ -1,3 +1,31 @@
 <h1>Add a Goal</h1>
 
-Form will go here
+Note: Make the form into a table
+
+<form action="/insert_goal">
+  <dl>
+    <dt>
+      <label for="browser_description">What is your goal?</label>
+      <input id="browser_description" type="text" name="input_goal" placeholder="Enter your goal here">
+    </dt>
+    <dt>
+      <label for="browser_description">How many times do you want to do it?</label>
+      <input id="browser_description" type="text" name="input_target" >
+    </dt>
+    <dt>
+      <label for="browser_description">How many times have you done it so far?</label>
+      <input id="browser_description" type="text" name="input_completed" >
+    </dt>
+    <dt>
+      <label for="browser_description">When will you do it by?</label>
+      <input id="browser_description" type="text" name="input_date" placeholder="Enter a date in yyyy/mm/dd format">
+    </dt>
+    <dt>
+      <label for="browser_description">Is this public or private?</label>
+      <input id="browser_description" type="text" name="input_public" placeholder="0 is public; 1 is private">
+    </dt>
+    <dt>
+      <button>Create Goal!</button>
+    </dt>
+  </dl>
+</form>

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get("/", { :controller => "goals", :action => "index" })
 
   get("/goals", { :controller => "goals", :action => "index" })
-  get("/goals/:path_id", { :controller => "goals", :action => "show" })
   get("/goals/new_goal", { :controller => "goals", :action => "new" })
+  get("/goals/:path_id", { :controller => "goals", :action => "show" })
+
   get("/delete_goal/:path_id", { :controller => "goals", :action => "destroy" })
   get("/insert_goal", { :controller => "goals", :action => "create" })
   get("/modify_goal/:path_id", { :controller => "goals", :action => "update" })

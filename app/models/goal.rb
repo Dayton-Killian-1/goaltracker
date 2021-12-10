@@ -7,6 +7,7 @@
 #  description   :text
 #  due_date      :datetime
 #  public        :integer
+#  status        :integer
 #  target_number :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
