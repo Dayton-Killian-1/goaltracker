@@ -1,0 +1,34 @@
+<h1>People who are getting after it!</h1>
+
+<table border="1">
+  <tr>
+    <th>
+      Name
+    </th>
+
+    <th>
+      Number of Goals
+    </th>
+
+    <th>
+      Percent Complete
+    </th>
+  </tr>
+
+  <% @users.each do |user| %>
+  <tr>
+    <td>
+      <%= user.name %>
+    </td>
+
+    <td>
+      Count
+    </td>
+
+    <td>
+      percent
+    </td>
+  </tr>
+  
+  <% end %>
+</table>
