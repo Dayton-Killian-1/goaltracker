@@ -3,6 +3,9 @@
 <table border="1">
   <tr>
     <th>
+      ID
+    </th>
+    <th>
       Name
     </th>
 
@@ -18,11 +21,14 @@
   <% @users.each do |user| %>
   <tr>
     <td>
+      <%= user.id %>
+    </td>
+    <td>
       <%= user.name %>
     </td>
 
     <td>
-      Count
+      <%= Goal.where({ :user_id => user.id}).count  %>
     </td>
 
     <td>

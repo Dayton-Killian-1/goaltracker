@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     render({ :template => "user_templates/signup_form.html.erb"})
   end
 
+  def new_session_form
+    render({ :template => "user_templates/signin_form.html.erb"})
+  end
+
   def create
     user = User.new
 
@@ -15,9 +19,11 @@ class UsersController < ApplicationController
     save_status = user.save
 
     if save_status == true
-      redirect_to("/users/#{user.username}", { :notice => "Thanks for signing up, " + user.name + "! Let's hit some goals!" })
+      session.store(:user_id, user.id)
+
+      redirect_to("/users/#{user.name}", { :notice => "Thanks for signing up, " + user.name + "! Let's hit some goals!" })
     else
-      redirect_to("/user_sign_up")
+      redirect_to("/user_sign_up", { :alert => user.errors.full_messages.to_sentence })
     end
   end
 
@@ -33,4 +39,13 @@ class UsersController < ApplicationController
 
     render({ :template => "user_templates/index.html" })
   end
+
+  def remove_cookies
+    reset_session
+
+    redirect_to("/", { :notice => "Thanks for checking in! Go get 'em!"})
+  end
+
+
+
 end

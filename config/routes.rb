@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get("/modify_goal/:path_id", { :controller => "goals", :action => "update" })
 
   get("/user_sign_up", { :controller => "users", :action => "new_registration_form" }) 
+  get("/user_sign_out", { :controller => "users", :action => "remove_cookies" }) 
+  get("/user_sign_in", { :controller => "users", :action => "new_session_form" }) 
 
 
   get("/users", { :controller => "users", :action => "index" })
