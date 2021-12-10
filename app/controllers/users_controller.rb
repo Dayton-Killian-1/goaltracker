@@ -55,7 +55,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order({ :name => :asc })
-
+    
     render({ :template => "user_templates/index.html" })
   end
 

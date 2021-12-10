@@ -1,31 +1,59 @@
 <h1>Add a Goal</h1>
 
-Note: Make the form into a table
 
 <form action="/insert_goal">
-  <dl>
-    <dt>
-      <label for="browser_description">What is your goal?</label>
-      <input id="browser_description" type="text" name="input_goal" placeholder="Enter your goal here">
-    </dt>
-    <dt>
-      <label for="browser_description">How many times do you want to do it?</label>
-      <input id="browser_description" type="text" name="input_target" >
-    </dt>
-    <dt>
-      <label for="browser_description">How many times have you done it so far?</label>
-      <input id="browser_description" type="text" name="input_completed" >
-    </dt>
-    <dt>
-      <label for="browser_description">When will you do it by?</label>
-      <input id="browser_description" type="text" name="input_date" placeholder="Enter a date in yyyy/mm/dd format">
-    </dt>
-    <dt>
-      <label for="browser_description">Is this public or private?</label>
-      <input id="browser_description" type="text" name="input_public" placeholder="0 is public; 1 is private">
-    </dt>
-    <dt>
-      <button>Create Goal!</button>
-    </dt>
-  </dl>
+  <table>
+    <tr>
+      <td>
+        <label for="browser_description">What is your goal?</label>
+      </td>
+      <td>
+        <input id="browser_description" type="text" name="input_goal" placeholder="Enter your goal here">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="browser_target">How many times do you want to do it?</label>
+      </td>
+      <td>
+        <input id="browser_target" type="number" name="input_target" >
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="browser_completed">How many times have you done it so far?</label>
+      </td>
+      <td>
+        <input id="browser_completed" type="number" name="input_completed" >
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="browser_due_date">When will you do it by?</label>
+      </td>
+      <td>
+        <input id="browser_due_date" type="date" name="input_date" placeholder="mm/dd/yyyy">
+      </td>
+    </tr>     
+    <tr>
+      <td>
+        <label for="browser_public">Make this goal public:</label>
+      </td>
+      <td>
+        <input name="input_public" type="hidden" value=0 />
+        <input type="checkbox" id="browser_public" name="input_public" value=1 />
+      </td>
+    </tr>
+  </table>
+  <br>
+  <button>Create Goal!</button>
+
 </form>
+
+
+
+
+
+
+
+

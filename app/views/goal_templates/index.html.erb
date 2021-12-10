@@ -1,9 +1,13 @@
 
-<% if session.fetch(:user_id) != nil %>
-<h1>
-  My Goals
-</h1>
 
+
+
+<% if session.fetch(:user_id) != nil %>
+
+<h1>
+  Make today great, <%= @user.name %>!
+</h1>
+<br>
 <table border="1">
   <tr>
     <th>
@@ -32,19 +36,39 @@
       <%= a_goal.description %>
     </td>
     <td>
-      <%= a_goal.target_number %>
+      <%= a_goal.completed.to_s + " of " + a_goal.target_number.to_s + " completed"%>
     </td>
     <td>
-      Button
+    <% if a_goal.status == 0 %>
+      <form action="/goals/record_goal">
+        <label for="browser_record_goal"></label>
+        <input id="browser_record_goal" type="hidden" name="input_record_goal" value=<%= a_goal.id%>>
+        <button>Did it!</button>
+      </form>
+    <% end %>
     </td>
     <td>
-      <%= a_goal.due_date %>
+      <% if a_goal.due_date != nil %>
+        <%= a_goal.due_date.strftime("%m-%d-%Y") %>
+      <% end %>
     </td>
     <td>
-      Status
+      <% if a_goal.status == 1 %>
+        Complete!
+      <% elsif a_goal.due_date == nil %>
+        In Progress      
+      <% elsif a_goal.due_date < Date.today %>
+        Past Due!
+      <% else %>
+        In Progress
+      <% end %>
     </td>
     <td>
-      <%= a_goal.public %>
+      <% if a_goal.public == 1%>
+        Yes
+      <% else %>
+        No
+      <% end %>
     </td>
     <td>
       <a href="/goals/<%= a_goal.id %>">
@@ -94,16 +118,22 @@
       <%= a_goal.target_number %>
     </td>
     <td>
-      <%= a_goal.due_date %>
+      <% if a_goal.due_date != nil %>
+        <%= a_goal.due_date.strftime("%m-%d-%Y") %>
+      <% end %>
     </td>
     <td>
       Status
     </td>
     <td>
       <a href="/goals/<%= a_goal.id %>">
-        Encourage Them!
+        Check it out!
       </a>
     </td>
   </tr>
   <% end %>
 </table>
+<br>
+<a href="/users">
+  See Everyone
+</a>

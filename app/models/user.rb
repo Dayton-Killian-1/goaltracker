@@ -21,4 +21,7 @@ class User < ApplicationRecord
 
   has_secure_password
   
+  has_many(:goals, { :class_name => "Goal", :foreign_key => "user_id"})
+
+
 end

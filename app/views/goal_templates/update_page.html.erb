@@ -9,6 +9,8 @@
     <td>
       <%= @the_owner %>
     </td>
+    <td>
+    </td>
   </tr>
   <tr>
     <td>
@@ -16,6 +18,12 @@
     </td>
     <td>
       <%= @the_goal.description %>
+    </td>
+    <td>
+      <form action="/update_goal_description/<%= @the_goal.id %>">
+        <input id="browser_description" type="text" name="input_update" >
+        <button>Edit</button>
+      </form>
     </td>
   </tr>
   <tr>
@@ -25,6 +33,12 @@
     <td>
       <%= @the_goal.target_number %>
     </td>
+    <td>
+      <form action="/update_goal_target_number/<%= @the_goal.id %>">
+        <input id="browser_target_number" type="number" name="input_update" >
+        <button>Edit</button>
+      </form>
+    </td>
   </tr>
   <tr>
     <td>
@@ -33,15 +47,25 @@
     <td>
       <%= @the_goal.completed %>
     </td>
+    <td>
+      <form action="/update_goal_completed/<%= @the_goal.id %>">
+        <input id="browser_completed" type="number" name="input_update" >
+        <button>Edit</button>
+      </form>
+    </td>
   </tr>
   <tr>
     <td>
       Due Date
     </td>
     <td>
-      <% if @the_goal.due_date != nil %>
-        <%= @the_goal.due_date.strftime("%m-%d-%Y") %>
-      <% end %>
+      <%= @the_goal.due_date %>
+    </td>
+    <td>
+      <form action="/update_goal_due_date/<%= @the_goal.id %>">
+        <input id="browser_due_date" type="date" name="input_update" placeholder="mm/dd/yyyy">
+        <button>Edit</button>
+      </form>
     </td>
   </tr>
   <tr>
@@ -54,6 +78,8 @@
       <% else %>
         No
       <% end %>
+    </td>
+    <td>
     </td>
   </tr>
   <tr>
@@ -70,6 +96,8 @@
       <% else %>
         In Progress
       <% end %>
+    </td>
+    <td>
     </td>
   </tr>
 </table>

@@ -15,6 +15,14 @@
 #
 class Goal < ApplicationRecord
 
+  belongs_to(:user)
+
+  validates(:description, { :presence => true})
+  validates(:target_number, { :presence => true})
+  validates(:completed, { :presence => true})
+  validates(:status, { :presence => true})
+  validates(:public, { :presence => true})
+
   def owner
     key = self.user_id
     the_owner = User.where({ :id => key })

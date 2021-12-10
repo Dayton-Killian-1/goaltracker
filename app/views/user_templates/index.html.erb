@@ -14,7 +14,7 @@
     </th>
 
     <th>
-      Percent Complete
+      Number Completed
     </th>
   </tr>
 
@@ -32,9 +32,14 @@
     </td>
 
     <td>
-      percent
+      <%= Goal.where({ :user_id => user.id, status: 1 }).count  %>
     </td>
   </tr>
   
   <% end %>
 </table>
+
+<br>
+<a href="/goals">
+  Back to the goals
+</a>
