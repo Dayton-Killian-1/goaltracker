@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get("/user_sign_up", { :controller => "users", :action => "new_registration_form" }) 
   get("/user_sign_out", { :controller => "users", :action => "remove_cookies" }) 
   get("/user_sign_in", { :controller => "users", :action => "new_session_form" }) 
+  post("/verify_credentials", { :controller => "users", :action => "verify"})
 
 
   get("/users", { :controller => "users", :action => "index" })
